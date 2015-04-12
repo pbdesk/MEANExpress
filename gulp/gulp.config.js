@@ -6,36 +6,42 @@
         var gulpConfig = {
             tempLoc: './.temp',
             buildLoc: './build',
+            buildDevLoc: './build/dev/',
+            buildRelLoc: './build/release/',
+            buildPath: '',
             alljs:[
                 './*.js',
                 './server/**/*.js',
                 './gulp/**/*.js'
             ],
+            serverSource: [
+                './server/**/*.*'
+            ],
             bowerComponentsLoc: './bower_components/',
-            publicBowerLoc: './public/bower/',
+            publicVendorFolder: './public/vendor/',
             bower: {
                 jquery: {
                     source: './bower_components/jquery/dist/*.*',
-                    dest: './public/bower/jquery/'
+                    dest: './public/vendor/jquery/'
                 },
                 bootstrap: {
                     source: './bower_components/bootstrap/dist/**/*.*',
-                    dest: './public/bower/bootstrap/'
+                    dest: './public/vendor/bootstrap/'
                 },
                 toastr: {
                     source: [
                         './bower_components/toastr/*.css',
                         './bower_components/toastr/*.js'
                     ],
-                    dest: './public/bower/toastr/'
+                    dest: './public/vendor/toastr/'
                 },
                 fontawesomeCSS: {
                     source: './bower_components/fontawesome/css/*.css',
-                    dest: './public/bower/fontawesome/'
+                    dest: './public/vendor/fontawesome/'
                 },
                 fontawesomeFONTS: {
                     source: './bower_components/fontawesome/fonts/*.*',
-                    dest: './public/bower/fontawesome/fonts/'
+                    dest: './public/vendor/fontawesome/fonts/'
                 },
                 angularCore: {
                     source: [
@@ -44,7 +50,7 @@
                         './bower_components/angular/angular.min.js.map',
                         './bower_components/angular/angular-csp.css'
                     ],
-                    dest: './public/bower/angular/'
+                    dest: './public/vendor/angular/'
                 }
             },
             myCss: [

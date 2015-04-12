@@ -7,32 +7,32 @@
         var gulp = require('gulp');
         var args = require('yargs').argv;
         var del = require('del');
-        var G = require('gulp-load-plugins')({lazy:true});
+        var GP = require('gulp-load-plugins')({lazy:true});
 
         var gulpConfig = require('./gulp.config')();
 
-        var gulpUtils = {
+        var gUtil = {
+            gulp: gulp,
+            GP: GP,
             config: gulpConfig,
             args: args,
             log: _log,
             logV: _logV,
             copyFiles: _copyFiles,
-            clean: _clean,
-            cleanTemp: _cleanTemp,
-            cleanBuild: _cleanBuild
+            clean: _clean
         };
-        return gulpUtils;
+        return gUtil;
 
         function _log(msg){
             if(typeof(msg) === 'object'){
                 for(var item in msg){
                     if(msg.hasOwnProperty(item)) {
-                        G.util.log(G.util.colors.blue(msg[item]));
+                        GP.util.log(GP.util.colors.blue(msg[item]));
                     }
                 }
             }
             else {
-                G.util.log(G.util.colors.yellow(msg));
+                GP.util.log(GP.util.colors.yellow(msg));
             }
         }
 
@@ -62,13 +62,6 @@
             });
         }
 
-        function _cleanTemp(){
-            _clean(gulpConfig.temoLoc);
-        }
-
-        function _cleanBuild(){
-            _clean(gulpConfig.buildLoc);
-        }
     };
 
 }());
