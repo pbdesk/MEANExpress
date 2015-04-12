@@ -1,0 +1,17 @@
+{
+  "name": "MEANExpress",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pbdesk/MEANExpress",
+  "authors": [
+    "Pinal Bhatt <PinalBhatt@gmail.com>"
+  ],
+  "description": "MEANExpress Bower",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
