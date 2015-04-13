@@ -16,7 +16,7 @@
         gUtil.log('Build Dev. Copying Server files');
         return gUtil.copyFiles(
             gUtil.config.serverSource,
-            gUtil.config.buildDevLoc
+            gUtil.config.buildDevLoc + 'server/'
         );
     });
 
