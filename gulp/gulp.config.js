@@ -12,6 +12,7 @@
             alljs:[
                 './*.js',
                 './server/**/*.js',
+                './server/**/*.json',
                 './gulp/**/*.js'
             ],
             serverSource: [

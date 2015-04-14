@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var appConfigs = require('./config');
+var config = require('./config')();
 
 var controllers = require('./controllers');
 
@@ -13,6 +13,11 @@ var controllers = require('./controllers');
 var users = require('./routes/users');
 
 var app = express();
+
+//setting Configs to app
+app.config = config;
+//console.log(JSON.stringify(config));
+//console.log(config.key1);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
